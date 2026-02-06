@@ -74,24 +74,24 @@
 
     <tbody>
         <!-- 게시글 목록 반복 출력 -->
-        <c:forEach var="board" items="${boardList}">
+        <c:forEach var="post" items="${postList}">
             <tr>
-                <td>${board.id}</td>
+                <td>${post.id}</td>
 
                 <td>
-                    <a href="detail?id=${board.id}">
-                        ${board.title}
+                    <a href="detail?id=${post.id}">
+                        ${post.title}
                     </a>
                 </td>
 
-                <td>${board.writer}</td>
-                <td>${board.createdAt}</td>
-                <td>${board.viewCount}</td>
+                <td>${post.writer}</td>
+                <td>${post.createdAt}</td>
+                <td>${post.viewCount}</td>
             </tr>
         </c:forEach>
 
         <!-- 게시글이 없을 때 -->
-        <c:if test="${empty boardList}">
+        <c:if test="${empty postList}">
             <tr>
                 <td colspan="5">게시글이 없습니다.</td>
             </tr>

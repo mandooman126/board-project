@@ -13,10 +13,15 @@ import com.example.demo.dto.BoardPost;
 @Service
 public class BoardService {
 
+	private final BoardDao boardDao;
+	
+	public BoardService(BoardDao boardDao) {
+		this.boardDao = boardDao;
+	}
+	
 	public List<BoardPost> getPostList() throws IOException, SQLException {
 		List<BoardPost> list = new ArrayList<BoardPost>();
-		BoardDao dao = new BoardDao();
-		list = dao.selectAllPosts();
+		list = boardDao.selectAllPosts();
 		
 		return list;
 	}
